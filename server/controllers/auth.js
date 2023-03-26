@@ -1,6 +1,9 @@
+// here we authenticate a user
+
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
+
 
 //create user(singup)
 export const register = async (req, res) => {
@@ -58,7 +61,7 @@ export const login = async (req, res) => {
 
         delete user.password;//delete the password for security
         res.status(200).json({ token, user });
-        
+
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
