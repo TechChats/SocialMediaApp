@@ -11,6 +11,7 @@ import { fileURLToPath } from "url";
 import { register } from "./controllers/auth.js";
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/users.js"
+import postRoutes from "./routes/ports.js";
 
 // all the middleware and package config
 /* CONFIGURATIONS */
@@ -48,6 +49,7 @@ app.post("/auth/register", upload.single("picture"), register);
 //routes (other routes)
 app.use("/auth",authRoutes)
 app.use("/users",userRoutes)
+app.use("/ports",postRoutes)
 
 //MONGOOSE SETUP
 const PORT = process.env.PORT || 6000; //here 6000 is backup port
