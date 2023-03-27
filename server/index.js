@@ -54,10 +54,31 @@ app.use("/auth",authRoutes)
 app.use("/users",userRoutes)
 app.use("/ports",postRoutes)
 
-//MONGOOSE SETUP
+
+//MONGOOSE SETUP in local machine
+
+/*
 const PORT = process.env.PORT || 6000; //here 6000 is backup port
 
 mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}).then(() => {
+    app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
+
+    //add data at once
+    User.insertMany(users)
+    Post.insertMany(posts)
+}).catch((error)=>{
+    console.log(error)
+})
+*/
+
+//MONGOOSE SETUP in github codespace
+
+const MONGODB_URL = process.env
+const PORT = 
+mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
