@@ -77,14 +77,14 @@ mongoose.connect(process.env.MONGO_URL, {
 //MONGOOSE SETUP in github codespace
 
 const MONGODB_URL = process.env
-const PORT = 
+
 mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
-    app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
+    // app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
 
-    //add data at once
+    // //add data at once
     User.insertMany(users)
     Post.insertMany(posts)
 }).catch((error)=>{
