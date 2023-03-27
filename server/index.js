@@ -12,6 +12,9 @@ import { register } from "./controllers/auth.js";
 import authRoutes from "./routes/auth.js"
 import userRoutes from "./routes/users.js"
 import postRoutes from "./routes/ports.js";
+import User from "./models/User.js";
+import Post from "./models/Post.js";
+import { users, posts} from "./data/index.js"
 
 // all the middleware and package config
 /* CONFIGURATIONS */
@@ -59,6 +62,10 @@ mongoose.connect(process.env.MONGO_URL, {
     useUnifiedTopology: true,
 }).then(() => {
     app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
+
+    //add data at once
+    User.insertMany(users)
+    Post.insertMany(posts)
 }).catch((error)=>{
     console.log(error)
 })
