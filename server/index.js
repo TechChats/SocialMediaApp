@@ -76,13 +76,14 @@ mongoose.connect(process.env.MONGO_URL, {
 
 //MONGOOSE SETUP in github codespace
 
-const MONGODB_URL = process.env
-
+const MONGODB_URL = 'mongodb+srv://vignesh10:vigu123@cluster0.bmz0j.mongodb.net/?retryWrites=true&w=majority'
+const PORT = 4000
+// const MONGODB_URL = process.env
 mongoose.connect(MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => {
-    // app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
+    app.listen(PORT, () => console.log(`server runing in Port: ${PORT}`));
 
     // //add data at once
     User.insertMany(users)
