@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "scenes/homePage";
 import LoginPage from "scenes/loginPage";
+import Navbar from "scenes/navbar";
 import ProfilePage from "scenes/profilePage";
 import { themeSettings } from "theme";
 
@@ -23,6 +24,7 @@ function App() {
       <ThemeProvider theme={theme}>
         {/* CssBaseline helps to reset css */}
         <CssBaseline>
+          <Navbar />
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/home" element={<HomePage />} />
