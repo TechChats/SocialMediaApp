@@ -47,9 +47,12 @@ const Navbar = () => {
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
-  console.log(user.lastName)
+  // console.log(user.lastName)
 
-  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${user.firstName} ${user.lastName}`;
+
+
+  const fullName = "Vignesh M"
   return (
     
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
@@ -67,7 +70,7 @@ const Navbar = () => {
             },
           }}
         >
-          Sociopedia
+          Flick
         </Typography>
 
         {/* ig not a mobile screen show search bar */}

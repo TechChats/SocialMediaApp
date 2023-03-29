@@ -24,7 +24,7 @@ function App() {
       <ThemeProvider theme={theme}>
         {/* CssBaseline helps to reset css */}
         <CssBaseline>
-          <Navbar />
+          {/* <Navbar /> */}
         <Routes>
           {/* <Route path="/" element={<LoginPage />} /> */}
           <Route path="/" element={<HomePage />} />
